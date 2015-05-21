@@ -1,0 +1,17 @@
+{
+  "name": "Communication | Member on created_at",
+  "_type": "Setup::Observer",
+  "triggers": "{\"created_at\":{\"0\":{\"o\":\"_not_null\",\"v\":[\"\",\"\",\"\"]}}}",
+  "data_type": {
+    "_reference": true,
+    "name": "Member",
+    "schema": {
+      "_reference": true,
+      "uri": "member.json",
+      "library": {
+        "_reference": true,
+        "name": "Communication"
+      }
+    }
+  }
+}

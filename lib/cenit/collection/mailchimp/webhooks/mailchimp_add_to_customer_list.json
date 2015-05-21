@@ -1,0 +1,11 @@
+{
+  "name": "Mailchimp | Add To Customer List",
+  "path": "add_to_list",
+  "purpose": "send",
+  "method": "post",
+  "template_parameters": [
+    {
+      "key": "list_id"
+    }
+  ]
+}

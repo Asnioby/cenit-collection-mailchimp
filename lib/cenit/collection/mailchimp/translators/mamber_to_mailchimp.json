@@ -1,0 +1,21 @@
+{
+  "name": "Mamber to Mailchimp",
+  "type": "Export",
+  "style": "ruby",
+  "mime_type": "application/json",
+  "file_extension": "json",
+  "bulk_source": false,
+  "transformation": "source.to_hash(:include_root => true).merge( \"request_id\" => source.id.to_s, parameters: parameters, \"list_id\" => parameters[\"list_id\"]).to_json ",
+  "source_data_type": {
+    "_reference": true,
+    "name": "Member",
+    "schema": {
+      "_reference": true,
+      "uri": "member.json",
+      "library": {
+        "_reference": true,
+        "name": "Communication"
+      }
+    }
+  }
+}

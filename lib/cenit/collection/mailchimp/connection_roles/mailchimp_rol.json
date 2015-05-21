@@ -1,0 +1,19 @@
+{
+  "name": "Mailchimp Rol",
+  "webhooks": [
+    {
+      "_reference": true,
+      "name": "Mailchimp | Add To Customer List"
+    },
+    {
+      "_reference": true,
+      "name": "Mailchimp | Add Order"
+    }
+  ],
+  "connections": [
+    {
+      "_reference": true,
+      "name": "Mailchimp Connection"
+    }
+  ]
+}

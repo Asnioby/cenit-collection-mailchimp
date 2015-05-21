@@ -1,0 +1,19 @@
+{
+  "name": "Member to Mailchimp Customer List",
+  "active": true,
+  "discard_events": false,
+  "data_type_scope": "Event source",
+  "last_trigger_timestamps": "2015-04-14 21:54:54 UTC",
+  "event": {
+    "_reference": true,
+    "name": "Communication | Member on created_at"
+  },
+  "translator": {
+    "_reference": true,
+    "name": "Mamber to Mailchimp"
+  },
+  "webhook": {
+    "_reference": true,
+    "name": "Mailchimp | Add To Customer List"
+  }
+}

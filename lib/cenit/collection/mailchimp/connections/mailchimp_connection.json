@@ -1,0 +1,9 @@
+{
+  "name": "Mailchimp Connection",
+  "url": "http://mailchimp.cenithub.com",
+  "template_parameters": [
+    {
+      "key": "mailchimp_api_key"
+    }
+  ]
+}

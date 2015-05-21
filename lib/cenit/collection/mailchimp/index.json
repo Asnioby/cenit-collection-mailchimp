@@ -1,0 +1,15 @@
+{
+  "name": "Mailchimp CENIT Integration",
+  "category": "Collection",
+  "description": "Mailchimp CENIT Integration",
+  "pull_parameters": [
+    {
+      "label": "Mailchimp API Key",
+      "parameter": "On connection 'Mailchimp Connection' template parameter 'mailchimp_api_key'"
+    },
+    {
+      "label": "Mailchimp List ID",
+      "parameter": "On webhook 'Mailchimp | Add Order' template parameter 'list_id'"
+    }
+  ]
+}

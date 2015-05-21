@@ -1,0 +1,6 @@
+{
+  "name": "Mailchimp | Add Order",
+  "path": "add_order",
+  "purpose": "send",
+  "method": "post"
+}
