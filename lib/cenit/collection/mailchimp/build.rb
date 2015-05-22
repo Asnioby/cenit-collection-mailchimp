@@ -1,4 +1,3 @@
-require 'cenit/collection/mailchimp/version'
 require 'cenit/collection/base/build'
 
 module Cenit

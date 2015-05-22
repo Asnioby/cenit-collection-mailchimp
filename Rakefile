@@ -53,6 +53,63 @@ task :create_repo do
   g.create_git_and_github_repo
 end
 
+desc "push shared collection into CENIT-Hub"
+require File.expand_path(File.join(*%w[ lib cenit collection mailchimp]), File.dirname(__FILE__))
+task :push do
+
+  push_api = 'http://localhost:3000/api/v1/push'
+
+  puts 'Default value for Push API: http://localhost:3000/api/v1/push'
+  api = ask("New PUSH API: ")
+
+  push_api = api unless api.nil? || api.empty?
+
+  user_key = ask("User Key: ")
+  user_token = ask("User Token: ")
+  config = {:push_url=> push_api, :user_key=> user_key, :user_token=> user_token}
+
+  respose = Cenit::Collection.push_collection(config)
+  puts respose
+end
+
+desc "show shared collection"
+require File.expand_path(File.join(*%w[ lib cenit collection mailchimp]), File.dirname(__FILE__))
+task :show do
+  puts Cenit::Collection.show_collection
+end
+
+desc "push sample data"
+require File.expand_path(File.join(*%w[ lib cenit collection mailchimp]), File.dirname(__FILE__))
+task :push_sample do
+  push_api = 'http://localhost:3000/api/v1/push'
+
+  puts 'Default value for Push API: http://localhost:3000/api/v1/push'
+  api = ask("New PUSH API: ")
+
+  push_api = api unless api.nil? || api.empty?
+
+  user_key = ask("User Key: ")
+  user_token = ask("User Token: ")
+  config = {:push_url=> push_api, :user_key=> user_key, :user_token=> user_token}
+  model = ask("Model name: ")
+
+  response = Cenit::Collection.push_sample(model, config) unless model.nil? || model.empty?
+  puts response
+end
+
+desc "import json collection source"
+require File.expand_path(File.join(*%w[ lib cenit collection mailchimp]), File.dirname(__FILE__))
+require 'fileutils'
+task :import do
+  begin
+    source= ask("Source path: ")
+    data = File.open(source, mode: "r:utf-8").read
+    Cenit::Collection.import data unless data.nil? || data.empty?
+    puts "Import success"
+  rescue (puts "Error import json")
+  end
+end
+
 require 'rspec/core'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec) do |spec|
